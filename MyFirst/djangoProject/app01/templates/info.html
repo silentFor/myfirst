@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>INFO表</h1>
+
+<a href="infoAdd.html">添加</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>密码</th>
+            <th>年龄</th>
+        </tr>
+    </thead>
+    <thead>
+    {% for obj in data %}
+        <tr>
+            <th>{{obj.id}}</th>
+            <th>{{ obj.name }}</th>
+            <th>{{ obj.password }}</th>
+            <th>{{ obj.age }}</th>
+            <td>
+                <a href="http://127.0.0.1:8000/infoDelete/?nid={{obj.id}}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </thead>
+</table>
+</body>
+</html>
